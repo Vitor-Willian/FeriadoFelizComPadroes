@@ -1,8 +1,9 @@
 public class App {
     public static void main(String[] args) {
-        Personagem guerreiro = new Guerreiro("Aragorn", 50);
-        Personagem arqueiro = new Arqueiro("Legolas", 40);
-        
+        Personagem guerreiro = PersonagemFactory.criarGuerreiro("Aragorn", 50);
+        Personagem arqueiro = PersonagemFactory.criarArqueiro("Legolas", 40);
+        Personagem mago = PersonagemFactory.criarMago("Gandalf", 60);
+
         Mob goblin = new Mob("Goblin", 100);
         
         guerreiro.ataque(goblin);
