@@ -16,5 +16,12 @@ public class App {
         arqueiro.ataque(goblin);
         mago.ataque(goblin);
 
+        ((Mago) mago).tornarPremium();
+
+        Zona zonaPremium = new ZonaPremiumProxy("Pay-to-win Village");
+
+        zonaPremium.acesso(guerreiro);
+        zonaPremium.acesso(mago);
+
     }
 }
