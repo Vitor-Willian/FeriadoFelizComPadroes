@@ -14,6 +14,7 @@ public class App {
         
         guerreiro.ataque(goblin);
         arqueiro.ataque(goblin);
+        mago.ataque(goblin);
 
     }
 }
