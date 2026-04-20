@@ -14,6 +14,24 @@ public class App {
         
         guerreiro.ataque(goblin);
         arqueiro.ataque(goblin);
+        mago.ataque(goblin);
+
+        ((Mago) mago).tornarPremium();
+
+        Zona zonaPremium = new ZonaPremiumProxy("Pay-to-win Village");
+
+        zonaPremium.acesso(guerreiro);
+        zonaPremium.acesso(mago);
+        
+        ControleMotorGrafico controleMotor = new ControleMotorGrafico();
+
+        MotorAMD motorAMD = new MotorAMD();
+        Motor adaptadorAmd = new AdaptadorMotorAMD(motorAMD);
+        controleMotor.init(adaptadorAmd);
+
+        MotorNvidia motorNvidia = new MotorNvidia();
+        Motor adaptadorNvidia = new AdaptadorMotorNvidia(motorNvidia);
+        controleMotor.init(adaptadorNvidia);
 
     }
 }
