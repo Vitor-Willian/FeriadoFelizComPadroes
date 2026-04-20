@@ -22,6 +22,16 @@ public class App {
 
         zonaPremium.acesso(guerreiro);
         zonaPremium.acesso(mago);
+        
+        ControleMotorGrafico controleMotor = new ControleMotorGrafico();
+
+        MotorAMD motorAMD = new MotorAMD();
+        Motor adaptadorAmd = new AdaptadorMotorAMD(motorAMD);
+        controleMotor.init(adaptadorAmd);
+
+        MotorNvidia motorNvidia = new MotorNvidia();
+        Motor adaptadorNvidia = new AdaptadorMotorNvidia(motorNvidia);
+        controleMotor.init(adaptadorNvidia);
 
     }
 }
