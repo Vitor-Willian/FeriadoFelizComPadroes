@@ -23,10 +23,9 @@ public class Arqueiro implements Personagem {
     }
 
     @Override
-    public void ataque(Mob alvo) {
+    public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com um arco\nDano: " + forca);
-        
-        // Sistema de dano 
+        return forca;
     }
     
 }

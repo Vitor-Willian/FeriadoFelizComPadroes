@@ -1,4 +1,4 @@
 public interface Personagem {
     String getNome();
-    void ataque(Mob alvo);
+    int ataque(Mob alvo);
 }

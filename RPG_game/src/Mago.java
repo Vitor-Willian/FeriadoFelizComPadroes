@@ -23,10 +23,9 @@ public class Mago implements Personagem {
     }
 
     @Override
-    public void ataque(Mob alvo) {
+    public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com um feitiço\nDano: " + poderMagico);
-        
-        // Sistema de dano 
+        return poderMagico;
     }
     
 }

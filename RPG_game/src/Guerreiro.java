@@ -23,9 +23,8 @@ public class Guerreiro implements Personagem {
     }
 
     @Override
-    public void ataque(Mob alvo) {
+    public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com uma espada\nDano: " + forca);
-        
-        // Sistema de dano 
+        return forca;
     }
 }

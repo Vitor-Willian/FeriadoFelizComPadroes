@@ -1,3 +1,4 @@
+import java.util.Iterator; 
 import java.util.List;
 
 public class BatalhaFachada {
@@ -11,11 +12,19 @@ public class BatalhaFachada {
     }
 
     public void iniciarBatalha(Personagem personagem, List<Mob> inimigos) {
-        while (batalhaStatus.CombateAtivo(inimigos)) {
-            for (Mob inimigo : inimigos) {
-                if (inimigo.getHp() > 0) {
-                    batalhaTurnos.Turno(personagem, inimigo);
+        System.out.println("\n========= BATALHA INICIADA =========");
 
+        while (batalhaStatus.CombateAtivo(inimigos)) {
+
+            Iterator<Mob> iterator = inimigos.iterator();
+            while (iterator.hasNext()) {
+                Mob inimigo = iterator.next();
+
+                batalhaTurnos.Turno(personagem, inimigo);
+
+                if (inimigo.getHp() <= 0) {
+                    System.out.println(inimigo.getNome() + " foi derrotado!");
+                    iterator.remove(); 
                 }
             }
         }
