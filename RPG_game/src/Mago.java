@@ -1,6 +1,8 @@
 public class Mago implements Personagem {
     private String nome;
     private int poderMagico;
+    private int maxHp = 100;
+    private int Hp = maxHp;
     private boolean isPremium;
 
     public Mago(String nome, int poderMagico) {
@@ -18,10 +20,28 @@ public class Mago implements Personagem {
     }
 
     @Override
-    public void ataque(Mob alvo) {
+    public String getNome() {
+        return this.nome;
+    }
+
+    @Override
+    public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com um feitiço\nDano: " + poderMagico);
-        
-        // Sistema de dano 
+        return poderMagico;
     }
     
+    @Override
+    public int getPoder() {
+        return this.poderMagico;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    @Override
+    public int getHp() {
+        return Hp;
+    }
 }

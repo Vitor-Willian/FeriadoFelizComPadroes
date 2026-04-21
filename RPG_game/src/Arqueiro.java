@@ -1,6 +1,8 @@
 public class Arqueiro implements Personagem {
     private String nome;
     private int forca;
+    private int maxHp = 120;
+    private int Hp = maxHp;
     private boolean isPremium;
 
     public Arqueiro(String nome, int forca) {
@@ -18,10 +20,28 @@ public class Arqueiro implements Personagem {
     }
 
     @Override
-    public void ataque(Mob alvo) {
+    public String getNome() {
+        return this.nome;
+    }
+
+    @Override
+    public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com um arco\nDano: " + forca);
-        
-        // Sistema de dano 
+        return forca;
     }
     
+    @Override
+    public int getPoder() {
+        return this.forca;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    @Override
+    public int getHp() {
+        return Hp;
+    }
 }

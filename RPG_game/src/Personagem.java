@@ -1,4 +1,8 @@
 public interface Personagem {
+    String getNome();
+    int ataque(Mob alvo);
 
-    void ataque(Mob alvo);
+    int getPoder();
+    int getMaxHp();
+    int getHp();
 }

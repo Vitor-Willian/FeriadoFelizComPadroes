@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) {
 
@@ -11,7 +14,11 @@ public class App {
         Personagem mago = PersonagemFactory.criarMago("Gandalf", 60);
 
         Mob goblin = new Mob("Goblin", 100);
-        
+        Mob orc = new Mob("Orc", 120);
+        List<Mob> inimigos = new ArrayList<>();
+        inimigos.add(goblin);
+        inimigos.add(orc);
+
         guerreiro.ataque(goblin);
         arqueiro.ataque(goblin);
         mago.ataque(goblin);
@@ -33,5 +40,17 @@ public class App {
         Motor adaptadorNvidia = new AdaptadorMotorNvidia(motorNvidia);
         controleMotor.init(adaptadorNvidia);
 
+        BatalhaFachada batalhaFachada = new BatalhaFachada();
+        batalhaFachada.iniciarBatalha(guerreiro, inimigos);
+
+        Personagem guerreiroEq = new AnelPoder(guerreiro);
+        System.out.println(guerreiroEq.getNome() + " - Força: " + guerreiroEq.getPoder());
+
+        Mob esqueleto = new Mob("Esqueleto", 60);
+        Mob Bandido = new Mob("Bandido", 80);
+        inimigos.add(esqueleto);
+        inimigos.add(Bandido);
+
+        batalhaFachada.iniciarBatalha(guerreiroEq, inimigos);
     }
 }
