@@ -59,5 +59,10 @@ public class App {
         mago.ataque(dragao);
         mago.setEstrategiaAtaque(new Fireball());
         mago.ataque(dragao);
+
+        Observer conquistas = new Conquistas();
+        batalhaFachada.addObserver(conquistas);
+
+        batalhaFachada.iniciarBatalha(mago, inimigos);
     }
 }

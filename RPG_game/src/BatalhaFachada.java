@@ -1,14 +1,35 @@
 import java.util.Iterator; 
 import java.util.List;
+import java.util.ArrayList;
 
-public class BatalhaFachada {
+public class BatalhaFachada implements Subject {
     
     private BatalhaTurnos batalhaTurnos;
     private BatalhaStatus batalhaStatus;
 
+    private List<Observer> observers;
+
     public BatalhaFachada() {
         this.batalhaTurnos = new BatalhaTurnos();
         this.batalhaStatus = new BatalhaStatus();
+        this.observers = new ArrayList<>();
+    }
+
+    @Override
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers(String evento) {
+        for (Observer observer : observers) {
+            observer.onNotify(evento);
+        }
     }
 
     public void iniciarBatalha(Personagem personagem, List<Mob> inimigos) {
@@ -29,5 +50,6 @@ public class BatalhaFachada {
             }
         }
         System.out.println("A batalha terminou!\n==================================\n");
+        notifyObservers("Batalha_Vencida");
     }
 }
