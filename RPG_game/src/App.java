@@ -52,5 +52,12 @@ public class App {
         inimigos.add(Bandido);
 
         batalhaFachada.iniciarBatalha(guerreiroEq, inimigos);
+
+        Mob dragao = new Mob("Dragão", 300);
+        inimigos.add(dragao);
+
+        mago.ataque(dragao);
+        mago.setEstrategiaAtaque(new Fireball());
+        mago.ataque(dragao);
     }
 }
