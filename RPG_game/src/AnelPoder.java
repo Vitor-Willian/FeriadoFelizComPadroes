@@ -3,6 +3,10 @@ public class AnelPoder extends Equipamento {
     public AnelPoder(Personagem personagem) {
         super(personagem);
     }
+    @Override
+    public void setEstrategiaAtaque(EstrategiaAtaque estrategia) {
+        personagem.setEstrategiaAtaque(estrategia);
+    }
 
     @Override
     public int ataque(Mob alvo) {
