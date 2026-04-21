@@ -46,5 +46,11 @@ public class App {
         Personagem guerreiroEq = new AnelPoder(guerreiro);
         System.out.println(guerreiroEq.getNome() + " - Força: " + guerreiroEq.getPoder());
 
+        Mob esqueleto = new Mob("Esqueleto", 60);
+        Mob Bandido = new Mob("Bandido", 80);
+        inimigos.add(esqueleto);
+        inimigos.add(Bandido);
+
+        batalhaFachada.iniciarBatalha(guerreiroEq, inimigos);
     }
 }
