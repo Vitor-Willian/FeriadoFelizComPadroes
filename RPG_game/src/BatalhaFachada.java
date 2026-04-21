@@ -28,6 +28,6 @@ public class BatalhaFachada {
                 }
             }
         }
-        System.out.println("A batalha terminou!");
+        System.out.println("A batalha terminou!\n==================================\n");
     }
 }

@@ -1,6 +1,8 @@
 public class Arqueiro implements Personagem {
     private String nome;
     private int forca;
+    private int maxHp = 120;
+    private int Hp = maxHp;
     private boolean isPremium;
 
     public Arqueiro(String nome, int forca) {
@@ -28,4 +30,18 @@ public class Arqueiro implements Personagem {
         return forca;
     }
     
+    @Override
+    public int getPoder() {
+        return this.forca;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    @Override
+    public int getHp() {
+        return Hp;
+    }
 }

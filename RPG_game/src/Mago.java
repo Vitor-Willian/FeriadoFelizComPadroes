@@ -1,6 +1,8 @@
 public class Mago implements Personagem {
     private String nome;
     private int poderMagico;
+    private int maxHp = 100;
+    private int Hp = maxHp;
     private boolean isPremium;
 
     public Mago(String nome, int poderMagico) {
@@ -28,4 +30,18 @@ public class Mago implements Personagem {
         return poderMagico;
     }
     
+    @Override
+    public int getPoder() {
+        return this.poderMagico;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    @Override
+    public int getHp() {
+        return Hp;
+    }
 }

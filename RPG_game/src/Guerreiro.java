@@ -1,6 +1,8 @@
 public class Guerreiro implements Personagem {
     private String nome;
     private int forca;
+    private int maxHp = 150;
+    private int Hp = maxHp;
     private boolean isPremium;
 
     public Guerreiro(String nome, int forca) {
@@ -26,5 +28,20 @@ public class Guerreiro implements Personagem {
     public int ataque(Mob alvo) {
         System.out.println(nome + " ataca " + alvo.getNome() + " com uma espada\nDano: " + forca);
         return forca;
+    }
+
+    @Override
+    public int getPoder() {
+        return this.forca;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    @Override
+    public int getHp() {
+        return Hp;
     }
 }

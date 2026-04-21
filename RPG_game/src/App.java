@@ -43,5 +43,8 @@ public class App {
         BatalhaFachada batalhaFachada = new BatalhaFachada();
         batalhaFachada.iniciarBatalha(guerreiro, inimigos);
 
+        Personagem guerreiroEq = new AnelPoder(guerreiro);
+        System.out.println(guerreiroEq.getNome() + " - Força: " + guerreiroEq.getPoder());
+
     }
 }
